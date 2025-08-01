@@ -1,0 +1,12 @@
+{
+  "azure-terraform-research": {
+    "tools": [
+      "documentation",
+      "bestpractices",
+      "azureterraformbestpractices",
+      "Terraform MCP"
+    ],
+    "description": "Azure/Terraform のベストプラクティスやドキュメントを調査する",
+    "icon": "tools"
+  }
+}
