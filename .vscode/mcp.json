@@ -1,0 +1,47 @@
+{
+  "servers": {
+    "Microsoft Learn Docs MCP Server": {
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "Azure MCP Server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure/mcp@latest",
+        "server",
+        "start"
+      ],
+    },
+    "Terraform MCP": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "hashicorp/terraform-mcp-server:latest"
+      ],
+    },
+    "Playwright MCP": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "GitHub MCP": {
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "DeepWiki MCP": {
+      "url": "https://mcp.deepwiki.com/sse"
+    },
+    "Context7 MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+  },
+  "inputs": []
+}
