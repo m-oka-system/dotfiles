@@ -1,18 +1,5 @@
 {
   "servers": {
-    "Microsoft Learn Docs MCP Server": {
-      "url": "https://learn.microsoft.com/api/mcp"
-    },
-    "Azure MCP Server": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@azure/mcp@latest",
-        "server",
-        "start"
-      ],
-    },
     "Terraform MCP": {
       "type": "stdio",
       "command": "docker",
