@@ -1,0 +1,42 @@
+{
+  "mcpServers": {
+    "Azure": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@azure/mcp@latest",
+        "server",
+        "start"
+      ],
+      "env": {}
+    },
+    "Terraform": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "hashicorp/terraform-mcp-server"
+      ],
+      "env": {}
+    },
+    "Playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
+    },
+    "Context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "env": {}
+    }
+  }
+}
