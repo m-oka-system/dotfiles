@@ -16,18 +16,18 @@
         "@playwright/mcp@latest"
       ]
     },
-    "GitHub MCP": {
-      "url": "https://api.githubcopilot.com/mcp/"
-    },
-    "DeepWiki MCP": {
-      "url": "https://mcp.deepwiki.com/sse"
-    },
     "Context7 MCP": {
       "command": "npx",
       "args": [
         "-y",
         "@upstash/context7-mcp"
       ]
+    },
+    "GitHub MCP": {
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "DeepWiki MCP": {
+      "url": "https://mcp.deepwiki.com/sse"
     },
   },
   "inputs": []
