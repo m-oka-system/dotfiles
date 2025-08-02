@@ -17,3 +17,6 @@ claude mcp add -s project Github -- docker run -i --rm -e GITHUB_PERSONAL_ACCESS
 
 # DeepWiki
 claude mcp add -s user --transport http Deepwiki https://mcp.deepwiki.com/mcp
+
+# Serena
+claude mcp add -s local Serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --enable-web-dashboard False --context ide-assistant --project $(pwd)
