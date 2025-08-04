@@ -14,6 +14,7 @@ extensions=(
     # Git・バージョン管理
     "github.vscode-pull-request-github"         # GitHub PR・Issue管理
     "mhutchie.git-graph"                        # Git履歴グラフ表示
+    "github.vscode-github-actions"              # GitHub Actions - CI/CD 管理
 
     # Markdown・ドキュメント
     "bierner.markdown-mermaid"                  # Mermaid図表をMarkdownで表示
