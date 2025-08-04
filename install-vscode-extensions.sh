@@ -45,6 +45,7 @@ extensions=(
 
     # インフラ・クラウド
     "hashicorp.terraform"                       # Terraform構文サポート
+    "ms-azuretools.vscode-azureterraform"       # Azure Terraform
     "ms-azuretools.vscode-azure-mcp-server"     # Azure MCP Server
     "ms-azuretools.vscode-azureappservice"      # Azure App Service
     "ms-azuretools.vscode-azurefunctions"       # Azure Functions
