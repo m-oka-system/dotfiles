@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": ".github/prompts/*.prompt.md",
+      "options": {
+        "embeddedLanguageFormatting": "off"
+      }
+    }
+  ]
+}
