@@ -1,1 +1,1 @@
-- すべて日本語で出力してください
+- ALWAYS output everything in Japanese.
