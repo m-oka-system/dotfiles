@@ -30,5 +30,13 @@
       "url": "https://mcp.deepwiki.com/sse"
     },
   },
-  "inputs": []
+  "Chrome DevTools": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "chrome-devtools-mcp@latest"
+    ]
+  }
+},
+"inputs": []
 }
