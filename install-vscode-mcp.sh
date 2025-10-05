@@ -21,5 +21,8 @@ code --add-mcp '{"name":"DeepWiki","type":"http","url":"https://mcp.deepwiki.com
 # Context7
 code --add-mcp '{"name":"Context7","type":"stdio","command":"npx","args":["-y","@upstash/context7-mcp"]}'
 
+# Serena
+code --add-mcp '{"name":"Serena","type":"stdio","command":"uvx","args":["--from","git+https://github.com/oraios/serena","serena","start-mcp-server","--enable-web-dashboard","False","--context","ide-assistant"]}'
+
 # Chrome DevTools
 code --add-mcp '{"name":"Chrome DevTools","type":"stdio","command":"npx","args":["chrome-devtools-mcp@latest"]}'

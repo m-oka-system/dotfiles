@@ -1,2 +1,5 @@
 # Claude Code
 settings.local.json
+
+# MCP
+.serena/
