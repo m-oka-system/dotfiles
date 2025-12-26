@@ -19,3 +19,11 @@ claude plugin install feature-dev@claude-plugins-official
 claude code
 /plugin
 /skills
+
+# プラグインを削除
+claude plugin uninstall example-skills@anthropic-agent-skills
+claude plugin uninstall document-skills@anthropic-agent-skills
+claude plugin uninstall context7@claude-plugins-official
+claude plugin uninstall pr-review-toolkit@claude-plugins-official
+claude plugin uninstall playwright@claude-plugins-official
+claude plugin uninstall feature-dev@claude-plugins-official
