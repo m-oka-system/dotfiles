@@ -2,6 +2,7 @@
 alias ss="source ~/.bashrc"
 alias c="cursor"
 alias cc="claude"
+alias w="wtp" # https://github.com/satococoa/wtp
 
 # Terraform
 alias tf="terraform"
@@ -10,6 +11,7 @@ alias tfv="terraform validate"
 alias tff="terraform fmt -recursive"
 alias tfa="terraform apply"
 alias tfd="terraform destroy"
+alias tfpo="terraform plan -out=plan.out && terraform show -no-color plan.out > plan.log"
 alias tui="tftui"
 
 # peco (Ctrl + R で history を検索) / ブランチ一覧を表示して切り替える
