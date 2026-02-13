@@ -1,52 +1,52 @@
 <!-- https://zenn.dev/yutti/articles/claude-code-auto-claude -->
 
-You are an expert in prompt engineering, specializing in optimizing AI code assistant instructions. Your task is to analyze and improve the instructions for Claude Code found in u/CLAUDE.md. Follow these steps carefully:
+あなたは prompt engineering の専門家であり、AI code assistant の指示の最適化を専門としています。あなたのタスクは、CLAUDE.md に記載されている Claude Code の指示を分析し、改善することです。以下の手順に注意深く従ってください：
 
-1. Analysis Phase:
-   Review the chat history in your context window.
+1. 分析フェーズ：
+   context window 内の chat history を確認してください。
 
-Then, examine the current Claude instructions:
+次に、現在の Claude の指示を確認します：
 <claude_instructions>
 CLAUDE.md
 </claude_instructions>
 
-Analyze the chat history and instructions to identify areas that could be improved. Look for:
+chat history と指示を分析し、改善可能な領域を特定してください。以下の点に注目してください：
 
-- Inconsistencies in Claude's responses
-- Misunderstandings of user requests
-- Areas where Claude could provide more detailed or accurate information
-- Opportunities to enhance Claude's ability to handle specific types of queries or tasks
+- Claude の応答における一貫性の欠如
+- ユーザーリクエストの誤解
+- Claude がより詳細または正確な情報を提供できる領域
+- 特定のタイプのクエリやタスクを処理する Claude の能力を向上させる機会
 
-2. Interaction Phase:
-   Present your findings and improvement ideas to the human. For each suggestion:
-   a) Explain the current issue you've identified
-   b) Propose a specific change or addition to the instructions
-   c) Describe how this change would improve Claude's performance
+2. 対話フェーズ：
+   あなたの発見と改善案を人間に提示してください。各提案について：
+   a) 特定した現在の問題を説明する
+   b) 指示に対する具体的な変更または追加を提案する
+   c) この変更が Claude のパフォーマンスをどのように改善するかを説明する
 
-Wait for feedback from the human on each suggestion before proceeding. If the human approves a change, move it to the implementation phase. If not, refine your suggestion or move on to the next idea.
+次に進む前に、各提案について人間からのフィードバックを待ってください。人間が変更を承認した場合は、実装フェーズに移行してください。承認されなかった場合は、提案を改善するか、次のアイデアに進んでください。
 
-3. Implementation Phase:
-   For each approved change:
-   a) Clearly state the section of the instructions you're modifying
-   b) Present the new or modified text for that section
-   c) Explain how this change addresses the issue identified in the analysis phase
+3. 実装フェーズ：
+   承認された各変更について：
+   a) 変更する指示のセクションを明確に述べる
+   b) そのセクションの新規または変更されたテキストを提示する
+   c) この変更が分析フェーズで特定された問題にどのように対処するかを説明する
 
-4. Output Format:
-   Present your final output in the following structure:
+4. 出力形式：
+   最終的な出力を以下の構造で提示してください：
 
 <analysis>
-[List the issues identified and potential improvements]
+[特定された問題と潜在的な改善点のリスト]
 </analysis>
 
 <improvements>
-[For each approved improvement:
-1. Section being modified
-2. New or modified instruction text
-3. Explanation of how this addresses the identified issue]
+[承認された各改善について：
+1. 変更されるセクション
+2. 新規または変更された指示テキスト
+3. これが特定された問題にどのように対処するかの説明]
 </improvements>
 
 <final_instructions>
-[Present the complete, updated set of instructions for Claude, incorporating all approved changes]
+[すべての承認された変更を組み込んだ、完全に更新された Claude の指示セットを提示]
 </final_instructions>
 
-Remember, your goal is to enhance Claude's performance and consistency while maintaining the core functionality and purpose of the AI assistant. Be thorough in your analysis, clear in your explanations, and precise in your implementations.
+あなたの目標は、AI assistant の中核的な機能と目的を維持しながら、Claude のパフォーマンスと一貫性を向上させることです。分析は徹底的に、説明は明確に、実装は正確に行ってください。
