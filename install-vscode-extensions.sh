@@ -24,7 +24,7 @@ extensions=(
     "takumii.markdowntable"                     # Markdownテーブル編集
 
     # コード品質・フォーマット
-    "esbenp.prettier-vscode"                    # Prettier - コードフォーマッター
+    "esbenp.prettier-vscode@11.0.3"                    # Prettier - コードフォーマッター
 
     # 開発・デバッグ・テスト
     "humao.rest-client"                         # REST Client - HTTP リクエスト送信
