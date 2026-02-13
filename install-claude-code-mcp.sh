@@ -23,3 +23,6 @@ claude mcp add -s local Serena -- uvx --from git+https://github.com/oraios/seren
 
 # Chrome DevTools
 claude mcp add -s user Chrome-DevTools npx chrome-devtools-mcp@latest
+
+# DrawIO
+claude mcp add -s user Drawio npx @drawio/mcp@latest
