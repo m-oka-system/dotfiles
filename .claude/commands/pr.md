@@ -1,65 +1,71 @@
 ---
 allowed-tools: Bash(gh:*), Bash(git:*)
-description: Generate PR description and automatically create pull request on GitHub
+description: PR の説明を生成し、GitHub にプルリクエストを作成する
 ---
 
-<!-- https://zenn.dev/hacobu/articles/d4a194b95aacd5 -->
+## コンテキスト
 
-## Context
+- 現在の git ステータス: !`git status`
+- この PR の変更内容: !`git diff main...HEAD`
+- この PR のコミット一覧: !`git log --oneline main..HEAD`
+- PR テンプレート: @.github/pull_request_template.md
 
-- Current git status: !`git status`
-- Changes in this PR: !`git diff main...HEAD`
-- Commits in this PR: !`git log --oneline main..HEAD`
-- PR template: @.github/pull_request_template.md
+## オプション
 
-## Your task
+| Option | Action                                                                    |
+| ------ | ------------------------------------------------------------------------- |
+| (なし) | PR を作成する                                                             |
+| `-p`   | ブランチを push してから PR を作成する                                    |
+| `-u`   | 既存の PR の説明を更新する                                                |
+| `-r`   | PR を作成し、自動レビューを実行する（pr-review-toolkit プラグインが必要） |
 
-Based on the provided option, perform one of the following actions:
+オプションは組み合わせ可能： `/pr -p -r` で push と PR 作成、自動レビューを実行。
 
-### Options:
+## ワークフロー
 
-- **No option or default**: Generate PR description and create pull request
-- **-p**: Push current branch and create pull request
-- **-u**: Update existing pull request description only
+### 共通手順（全オプション共通）
 
-### Default behavior (no option):
+1. テンプレートの形式に従って、日本語で PR の説明を生成する
+2. 変更内容を視覚化する Mermaid Diagram を含める
+3. PR の作成/更新後、ブラウザで PR を開く： `gh pr view --web`
 
-1. Create a PR description following the **exact format** of the PR template in Japanese
-2. **Add a Mermaid diagram** that visualizes the changes made in this PR
-3. Execute `gh pr create --draft` with the generated title and description
+### オプション別の手順
 
-### With -p option:
+| Option | Command                                                                    |
+| ------ | -------------------------------------------------------------------------- |
+| (なし) | `gh pr create`                                                             |
+| `-p`   | `git push -u origin <branch>` の後に `gh pr create`                        |
+| `-u`   | `gh pr edit --body <description>`                                          |
+| `-r`   | `gh pr create`（終了コード 0）の後に `/pr-review-toolkit:review-pr` を実行 |
 
-1. Push current branch to remote repository using `git push -u origin <current-branch>`
-2. Create a PR description following the **exact format** of the PR template in Japanese
-3. **Add a Mermaid diagram** that visualizes the changes made in this PR
-4. Execute `gh pr create --draft` with the generated title and description
+## 要件
 
-### With -u option:
+### PR の説明
 
-1. Create a PR description following the **exact format** of the PR template in Japanese
-2. **Add a Mermaid diagram** that visualizes the changes made in this PR
-3. Update existing pull request description using `gh pr edit --body <description>`
+- テンプレートの構成に正確に従う
+- すべての内容を日本語で記述する
+- 具体的な実装の詳細とテスト手順を含める
+- 包括的かつ簡潔に記述する
 
-### Requirements:
+### Mermaid Diagram
 
-1. Follow the template structure exactly
-2. Use Japanese for all content
-3. Include specific implementation details
-4. List concrete testing steps
-5. Always include a Mermaid diagram that shows:
-   - Architecture changes (if any)
-   - Data flow modifications
-   - Component relationships
-   - Process flows affected by the changes
-6. Be comprehensive but concise
+関連する側面を示す図を含める：
 
-### Mermaid Diagram Guidelines:
+- アーキテクチャやデータフローの変更
+- コンポーネント間の関係
+- 影響を受けるプロセスフロー
 
-- Use appropriate diagram types (flowchart, sequence, class, etc.)
-- Show before/after states if applicable
-- Highlight new or modified components
-- Use consistent styling and colors
-- Add the diagram in a dedicated section of the PR description
+ガイドライン：
 
-**Generate the PR description and create the pull request automatically.**
+- 適切な図の種類を使用する（flowchart、sequence、class など）
+- 該当する場合は変更前後の状態を示す
+- 新規または変更されたコンポーネントを強調する
+- **色やスタイリングは使用しない**： `style`、`classDef`、`fill`、`stroke`、色の指定は避ける
+
+## エラーハンドリング
+
+- `gh pr create` が失敗した場合、ワークフローを中断しエラーを報告する
+- `-r` オプション：PR の作成は成功したが `/pr-review-toolkit:review-pr` が利用できない場合、ユーザーに警告するが PR の作成は成功とみなす
+- `-r` オプション：レビューの実行が失敗した場合、エラーを報告するが作成済みの PR は保持する
+
+**オプションに基づいて PR の説明を生成し、適切なコマンドを実行してください。**
