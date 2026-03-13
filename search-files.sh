@@ -94,9 +94,17 @@ if command -v rg &> /dev/null; then
 
     # Count matches
     if [ "$FILES_ONLY" = true ]; then
-        MATCH_COUNT=$(echo "$OUTPUT" | rg --color never --glob "$FILE_PATTERN" --files-with-matches --count "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | wc -l)
+        if [ -n "$OUTPUT" ]; then
+            MATCH_COUNT=$(echo "$OUTPUT" | grep -c .)
+        else
+            MATCH_COUNT=0
+        fi
     else
-        MATCH_COUNT=$(rg --color never --glob "$FILE_PATTERN" --count "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | awk -F: '{s+=$NF} END {print s+0}')
+        RG_COUNT_OPTS=(--color never --glob "$FILE_PATTERN" --count)
+        if [ "$IGNORE_CASE" = true ]; then
+            RG_COUNT_OPTS+=(--ignore-case)
+        fi
+        MATCH_COUNT=$(rg "${RG_COUNT_OPTS[@]}" "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | awk -F: '{s+=$NF} END {print s+0}')
     fi
 else
     # Fallback to grep
@@ -114,10 +122,16 @@ else
     OUTPUT=$(grep "${GREP_OPTS[@]}" "$KEYWORD" "$SEARCH_DIR" 2>/dev/null)
     EXIT_CODE=$?
 
+    # Count matches
+    GREP_COUNT_OPTS=(--include="$FILE_PATTERN" --color=never)
+    if [ "$IGNORE_CASE" = true ]; then
+        GREP_COUNT_OPTS+=(-i)
+    fi
+
     if [ "$FILES_ONLY" = true ]; then
-        MATCH_COUNT=$(grep -rl --include="$FILE_PATTERN" ${IGNORE_CASE:+-i} "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | wc -l)
+        MATCH_COUNT=$(grep -rl "${GREP_COUNT_OPTS[@]}" "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | wc -l)
     else
-        MATCH_COUNT=$(grep -rn --include="$FILE_PATTERN" --color=never ${IGNORE_CASE:+-i} "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | wc -l)
+        MATCH_COUNT=$(grep -rn "${GREP_COUNT_OPTS[@]}" "$KEYWORD" "$SEARCH_DIR" 2>/dev/null | wc -l)
     fi
 fi
 
