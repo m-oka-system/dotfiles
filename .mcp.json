@@ -1,15 +1,5 @@
 {
   "mcpServers": {
-    "Azure": {
-      "type": "stdio",
-      "command": "npx",
-      "args": [
-        "@azure/mcp@latest",
-        "server",
-        "start"
-      ],
-      "env": {}
-    },
     "Terraform": {
       "type": "stdio",
       "command": "docker",

@@ -15,10 +15,10 @@
   "enabledPlugins": {
     "example-skills@anthropic-agent-skills": true,
     "document-skills@anthropic-agent-skills": true,
-    "context7@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true
+    "feature-dev@claude-plugins-official": true,
+    "azure@azure-skills": true
   },
   "extraKnownMarketplaces": {
     "anthropics-skills": {
@@ -31,6 +31,12 @@
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "microsoft-azure-skills": {
+      "source": {
+        "source": "github",
+        "repo": "microsoft/azure-skills"
       }
     }
   }
