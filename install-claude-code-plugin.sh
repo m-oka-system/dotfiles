@@ -4,6 +4,7 @@
 claude plugin marketplace add anthropics/skills
 claude plugin marketplace add anthropics/claude-plugins-official
 claude plugin marketplace add microsoft/azure-skills
+claude plugin marketplace add affaan-m/everything-claude-code
 
 # マーケットプレイスの一覧を確認
 claude plugin marketplace list
@@ -16,6 +17,7 @@ claude plugin install pr-review-toolkit@claude-plugins-official
 claude plugin install playwright@claude-plugins-official
 claude plugin install feature-dev@claude-plugins-official
 claude plugin install azure@azure-skills
+claude plugin install everything-claude-code@everything-claude-code
 
 # プラグインの一覧を確認
 claude code
@@ -30,3 +32,4 @@ claude plugin uninstall pr-review-toolkit@claude-plugins-official
 claude plugin uninstall playwright@claude-plugins-official
 claude plugin uninstall feature-dev@claude-plugins-official
 claude plugin uninstall azure@azure-skills
+claude plugin uninstall everything-claude-code@affaan-m/everything-claude-code
