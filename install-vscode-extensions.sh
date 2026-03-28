@@ -50,6 +50,7 @@ extensions=(
     "ms-azuretools.vscode-azureappservice"      # Azure App Service
     "ms-azuretools.vscode-azurefunctions"       # Azure Functions
     "ms-azuretools.vscode-azureresourcegroups"  # Azure Resource Groups
+    "ms-kubernetes-tools.vscode-aks-tools"      # Azure Kubernetes Service
 
     # 言語・ローカライゼーション
     "ms-ceintl.vscode-language-pack-ja"         # 日本語言語パック
