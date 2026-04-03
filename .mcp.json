@@ -10,6 +10,14 @@
         "hashicorp/terraform-mcp-server"
       ],
       "env": {}
+    },
+    "aks": {
+      "type": "stdio",
+      "command": "sh",
+      "args": [
+        "-c",
+        "docker run -i --rm --user $(id -u) -v ~/.azure:/home/mcp/.azure -v ~/.kube:/home/mcp/.kube ghcr.io/azure/aks-mcp:latest --transport stdio"
+      ]
     }
   }
 }
